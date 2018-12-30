@@ -1,7 +1,7 @@
 # Flask by Example
 ## Part One: Set up a local development environment and then deploy both a staging and a production environment on Heroku.
 
-## Part Two: Set up a PostgreSQL database along with SQLAlchemy and Alembic to handle migrations. (current)
+## Part Two: Set up a PostgreSQL database along with SQLAlchemy and Alembic to handle migrations.
 
 ## Part Three: Add in the back-end logic to scrape and then process the word counts from a webpage using the requests, BeautifulSoup, and Natural Language Toolkit (NLTK) libraries.
 
@@ -14,6 +14,11 @@ $ pipenv --python 3.6
 $ pipenv shell
 
 $ pip install -r requirements.txt
+
+# PostgreSQL Installation
+$ sudo apt update
+$ sudo apt install postgresql postgresql-contrib
+
 ```
 
 ## Set up PostgreSQL
@@ -28,6 +33,7 @@ $ psql
 ```bash
 $ source .env
 $ python manage.py db upgrade
+$ python manage.py runserver
 ```
 
 ## License
