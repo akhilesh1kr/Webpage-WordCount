@@ -1,10 +1,13 @@
-# Flask by Example
-## Part One: Set up a local development environment and then deploy both a staging and a production environment on Heroku.
+# WebPage WordCount
 
-## Part Two: Set up a PostgreSQL database along with SQLAlchemy and Alembic to handle migrations.
+This application counts the words in the webpage returned by user-submitted url.
 
-## Part Three: Add in the back-end logic to scrape and then process the word counts from a webpage using the requests, BeautifulSoup, and Natural Language Toolkit (NLTK) libraries.
-
+## Technology used
+```
+Flask
+PostgreSQL
+Redis
+```
 
 ## Installation
 ```bash
@@ -34,6 +37,32 @@ $ psql
 $ source .env
 $ python manage.py db upgrade
 $ python manage.py runserver
+
+# Open another Tab on Terminal
+$ python worker.py
+```
+
+## Redis Installation
+```
+Download, extract and compile Redis with:
+
+$ wget http://download.redis.io/releases/redis-5.0.3.tar.gz
+$ tar xzf redis-5.0.3.tar.gz
+$ cd redis-5.0.3
+$ make
+
+The binaries that are now compiled are available in the src directory. Run Redis with:
+
+$ src/redis-server
+```
+
+## Downloading NLTK (though Tokenizer is already added in git project)
+```
+$ python -m nltk.downloader
+
+When the installation window appears, update the ‘Download Directory’ to absolute_path_to_your_app/nltk_data/.
+
+Then click the ‘Models’ tab and select ‘punkt’ under the ‘Identifier’ column. Click ‘Download’.
 ```
 
 ## License
